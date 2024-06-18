@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { createGameRoute, deleteGameRoute } from '../../utils/APIRoutes';
-import socket from "../../utils/Socket";
+// import socket from "../../utils/Socket";
 import 'animate.css';
 import { Link } from 'react-router-dom';
 
@@ -69,9 +69,7 @@ async function fetchUserList(){
 
         toast.success(response.data.message);
         setShowModal(false)
-        socket.emit("send-message", {
-          room: 101
-        });
+      
 
       } catch (error) {
         // Handle any errors
@@ -85,34 +83,7 @@ async function fetchUserList(){
   });
 
 
-  useEffect(() => {
 
-    socket.emit("is-online", 
-      userId._id
-    );
-
-    fetchUserList();
-    // Emit join-room event when the socket connection is established
-    // socket.emit("join-room", 101);
-   
-    // socket.on("receive-message", (data) => {
-    //   console.log(data)
-    //   setData(data)
-    //   //setChatMessages((prevMessages) => [...prevMessages, data]);
-    // });
-
-    socket.on("disconnect", () => {
-      // When the socket disconnects, emit an "is-online" event to the server
-      socket.emit("is-online", userId._id);
-  });
-  
-
-    return () => {
-      // Unsubscribe from socket events here if needed
-      // Note: It's generally not necessary to manually disconnect the socket here,
-      // as it will be disconnected automatically when the component unmounts.
-    };
-  }, []);
 
   function generateRoomCode(id) {
     // Ensure userId is a string
@@ -157,7 +128,7 @@ async function fetchUserList(){
                   </div>
                   <div>
                     <p className='text-black font-semibold'>{item.name}</p>
-                    <p className={`text-sm font-semibold ${item.isOnline ? "text-green-500" : "text-gray-500"} `}>{item.isOnline ? "Online..." : item.lastSeen}</p>
+                    <p className={`text-sm font-semibold ${item.isOnline ? "text-orange-500" : "text-gray-500"} `}>{item.isOnline ? "Online..." : item.lastSeen}</p>
                   </div>
                 </div>
                 <div>

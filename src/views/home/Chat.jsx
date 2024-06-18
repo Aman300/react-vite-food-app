@@ -114,7 +114,7 @@ function Chat() {
 
     <div className='flex justify-between mb-3'>                   
         
-    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => (navigate("/"))}  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:text-green-600">
+    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => (navigate("/"))}  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:text-orange-600">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
     </svg>
         
@@ -132,7 +132,7 @@ function Chat() {
             </div>
             <div>
               <p className='text-black font-semibold'>{data && data.name}</p>
-              <p className={`text-sm font-semibold ${data && data.isOnline ? "text-green-500" : "text-gray-500"} `}>{data && data.isOnline ? "Online..." : data.lastSeen}</p>
+              <p className={`text-sm font-semibold ${data && data.isOnline ? "text-orange-500" : "text-gray-500"} `}>{data && data.isOnline ? "Online..." : data.lastSeen}</p>
             </div>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer">
@@ -168,7 +168,7 @@ function Chat() {
                       <div
                         className={`${
                           message.user === user.name
-                            ? "bg-green-100 text-right"
+                            ? "bg-orange-100 text-right"
                             : "bg-gray-100 text-left"
                         } p-2 rounded-lg`}
                       >
@@ -213,7 +213,7 @@ function Chat() {
                 <button
                   type="button"
                   onClick={sendMessage}
-                  className="bg-green-600 text-white  px-3 py-2 rounded-xl focus:outline-none hover:bg-green-700 cursor-pointer active:bg-green-800 active:text-slate-300 focus-visible:outline-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 flex gap-2 items-center justify-center"
+                  className="bg-orange-600 text-white  px-3 py-2 rounded-xl focus:outline-none hover:bg-orange-700 cursor-pointer active:bg-orange-800 active:text-slate-300 focus-visible:outline-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 flex gap-2 items-center justify-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

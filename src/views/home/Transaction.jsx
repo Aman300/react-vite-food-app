@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { createGameRoute, deleteGameRoute } from '../../utils/APIRoutes';
-import socket from "../../utils/Socket";
+// import socket from "../../utils/Socket";
 import 'animate.css';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -55,9 +55,7 @@ async function fetchOpenGame(){
 
         toast.success(response.data.message);
         setShowModal(false)
-        socket.emit("send-message", {
-          room: 101
-        });
+       
 
       } catch (error) {
         // Handle any errors
@@ -79,9 +77,7 @@ async function fetchOpenGame(){
 
       if(response.data.status){
         toast.success(response.data.message);
-        socket.emit("send-message", {
-          room: 101
-        });
+       
       }
 
     }catch(e){
@@ -90,33 +86,6 @@ async function fetchOpenGame(){
     }
   }
 
-
-
-  useEffect(() => {
-    // Emit join-room event when the socket connection is established
-    socket.emit("join-room", 101);
-    socket.emit("send-message", 
-      fetchOpenGame()
-    );
-
-    socket.on("receive-message", (data) => {
-      console.log(data)
-      setData(data)
-      //setChatMessages((prevMessages) => [...prevMessages, data]);
-    });
-
-    socket.on("disconnect", () => {
-      socket.emit("send-message", 
-      fetchOpenGame()
-    );
-    });
-
-    return () => {
-      // Unsubscribe from socket events here if needed
-      // Note: It's generally not necessary to manually disconnect the socket here,
-      // as it will be disconnected automatically when the component unmounts.
-    };
-  }, []);
 
 
 
@@ -128,7 +97,7 @@ async function fetchOpenGame(){
 
     <div className='flex justify-between mb-3'>                   
         
-    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => (navigate("/"))}  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:text-green-600">
+    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => (navigate("/"))}  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:text-orange-600">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
     </svg>
         
@@ -146,7 +115,7 @@ async function fetchOpenGame(){
             </div>
             <div>
               <p className='text-black font-semibold'>Aman Sharma</p>
-              <p className='text-sm font-semibold text-green-500'>Online..</p>
+              <p className='text-sm font-semibold text-orange-500'>Online..</p>
             </div>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer">
