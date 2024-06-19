@@ -107,114 +107,89 @@ async function fetchUserList(){
   return (
     <>
 
-    <div className='h-screen p-5'>
-      <div>
-        <div className='flex justify-between items-center mb-4'>
-          <p className=' font-semibold'>Chat User</p>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-          </svg>
-        </div>
+    <div className='h-screen'>
 
-
-        {
-          userData &&
-          userData.map((item, index) =>
-            item._id !== userId._id ? (
-              <Link onClick={() => generateRoomCode(item._id)} key={index} to={`/chat/${item._id}`} className='flex justify-between items-center bg-white w-full h-20 px-5 rounded-2xl mb-3'>
-                <div className='flex justify-center items-center gap-2'>
-                  <div>
-                    <img className=' size-12' src={item.profile} alt="" />
-                  </div>
-                  <div>
-                    <p className='text-black font-semibold'>{item.name}</p>
-                    <p className={`text-sm font-semibold ${item.isOnline ? "text-orange-500" : "text-gray-500"} `}>{item.isOnline ? "Online..." : item.lastSeen}</p>
-                  </div>
-                </div>
-                <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                  </svg>
-                </div>
-              </Link>
-            ) : null
-          )
-        }
-
-       
-
-      
-
-       
+      <div className='bg-black h-48 rounded-3xl ml-4 mr-4'>
+        <img className='object-cover h-48 w-full rounded-3xl' src="https://cdn.pixabay.com/photo/2024/05/06/16/58/burger-8743791_1280.jpg" alt="" />
       </div>
+      <div className="flex animate__animated animate__fadeInUp animate__faster fixed bottom-0 xl:w-1/3 w-full outline-none focus:outline-none">
+        <div className="w-full">
+          <div className="rounded-t-[30px] shadow-xl relative flex flex-col w-full bg-white outline-none focus:outline-none xl:p-6 p-5">
+            
+            <div className='flex justify-start items-center mb-6'>
+              <h1 className=' text-xl font-semibold'>Categories</h1>
+            </div>
 
-    </div>
-
-    
-    {showModal ? (
-        <>
-          <div className="flex animate__animated animate__fadeInUp animate__faster fixed bottom-0 xl:w-1/3 w-full outline-none focus:outline-none">
-            <div className="w-full">
-              <div className="rounded-t-[30px] shadow-xl relative flex flex-col w-full bg-black outline-none focus:outline-none xl:p-6 p-5">
-                <div className='flex justify-between ' onClick={() => setShowModal(false)}>
-                  <p className=' text-bold font-semibold'></p>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer text-white">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>
+            <div className='flex items-center gap-2 mb-6'> 
+              <div className='flex justify-start gap-2 items-center p-1.5 bg-orange-500 rounded-full shadow-xl'>
+                <div className='bg-white rounded-full p-1'>
+                  <img className=' size-6' src="https://www.svgrepo.com/show/475195/hamburger.svg" alt="" />
                 </div>
-                <form >
-
                 <div>
-                    <div className='mb-4 text-center p-1'>
-                      <input
-                        id="amount"
-                        name='amount'
-                        className={`w-full text-white text-center px-8 py-3 rounded-full font-semibold bg-[#1e1d22]  placeholder-gray-500 text-xl focus:outline-none focus:border-gray-400 mb-4`}
-                        type="number"
-                        placeholder="Amount"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
-                      />
-                      <p className=' text-[#1e1d22] text-sm'>₹ 3.5 commission Pay a commission ₹ 5000</p>
-                    </div>
-
-                    <div className='flex justify-around items-center gap-3 text-white mb-4 text-2xl '>
-                      <button type="button" onClick={() => handleButtonClick('1')}>1</button>
-                      <button type="button" onClick={() => handleButtonClick('2')}>2</button>
-                      <button type="button" onClick={() => handleButtonClick('3')}>3</button>
-                    </div>
-                    <div className='flex justify-around items-center gap-3 text-white mb-4 text-2xl '>
-                      <button type="button" onClick={() => handleButtonClick('4')}>4</button>
-                      <button type="button" onClick={() => handleButtonClick('5')}>5</button>
-                      <button type="button" onClick={() => handleButtonClick('6')}>6</button>
-                    </div>
-                    <div className='flex justify-around items-center gap-3 text-white mb-4 text-2xl '>
-                      <button type="button" onClick={() => handleButtonClick('7')}>7</button>
-                      <button type="button" onClick={() => handleButtonClick('8')}>8</button>
-                      <button type="button" onClick={() => handleButtonClick('9')}>9</button>
-                    </div>
-                    <div className='flex justify-around items-center gap-3 text-white mb-4 text-2xl '>
-                      <button type="button" onClick={() => handleButtonClick('.')}>.</button>
-                      <button type="button" onClick={() => handleButtonClick('0')}>0</button>
-                      <svg type="button" onClick={() => handleButtonClick('clear')} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
-                    </svg>
-                    </div>
-                  </div>
-
-                    <button
-                        type='submit'
-                        className="mt-5 tracking-wide font-semibold bg-white text-black w-full py-3 rounded-full hover:bg-gray-100 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"                        
-                    >
-                      <span>Send Money</span>                  
-                    </button>
-                </form>
+                  <p className='text-white font-semibold'>Hamburger</p>
+                </div>
+              </div>
+              <div className='flex justify-start gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
+                <div className='bg-white rounded-full p-1'>
+                  <img className=' size-6' src="https://www.svgrepo.com/show/475216/pizza.svg" alt="" />
+                </div>
+                <div>
+                  <p className='text-black font-semibold'>Pizza</p>
+                </div>
+              </div>
+              <div className='flex justify-start gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
+                <div className='bg-white rounded-full p-1'>
+                  <img className=' size-6' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
+                </div>
+                <div>
+                  <p className='text-black font-semibold'>Meat</p>
+                </div>
               </div>
             </div>
+
+            <div className='flex justify-start items-center mb-4'>
+              <h1 className=' text-xl font-semibold'>Menu</h1>
+            </div>
+
+            <div className='grid grid-cols-2 mb-4'>
+
+              <div className='h-48 bg-[#f5f7f9] rounded-2xl p-2'>
+                 <img className=' h-24 w-full rounded-3xl' src="https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_1280.jpg" alt="" />
+                 <p className='text-center text-sm p-1 text-gray-500'>Hamburger</p>
+                 <p className='text-center p-1'>Dubble Hamger</p>
+                 <button className='py-1 w-full bg-orange-500 flex justify-center items-center gap-2 rounded-full text-sm text-white'>
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                  </svg>
+                  Add to Chart</button>
+              </div>
+
+
+
+            </div>
+           
+         
+         
+
+              <div className='flex justify-around items-center'>
+                <div className='py-2 px-8 border rounded-xl'>
+                  <img className=' size-8' src="https://www.svgrepo.com/show/223041/google.svg" alt="" />
+                </div>
+                <div className='py-2 px-8 border rounded-xl'>
+                  <img className=' size-8' src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="" />
+                </div>
+
+                <div className='py-2 px-8 border rounded-xl'>
+                  <img className=' size-8' src="https://www.svgrepo.com/show/511330/apple-173.svg" alt="" />
+                </div>
+              </div>
+
+             
+                
           </div>
-        </>
-      ) : null}
-    
+        </div>
+      </div>
+    </div>
 
 
     </>
