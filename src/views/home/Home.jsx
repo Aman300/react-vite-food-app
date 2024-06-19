@@ -160,7 +160,7 @@ async function fetchUserList(){
               <h1 className=' text-xl font-semibold'>Menu</h1>
             </div>
 
-            <div className='grid grid-cols-2 mb-4'>
+            <div className='grid grid-cols-2 gap-3 mb-4'>
 
               <div className=' bg-[#f5f7f9] rounded-2xl p-2'>
                  <img className=' h-24 w-full rounded-3xl' src="https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_1280.jpg" alt="" />
