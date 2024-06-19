@@ -133,82 +133,82 @@ function Signin() {
             <h1 className=' text-xl font-semibold'>Sign In ✌</h1>
           </div>
 
-        <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit}>
 
-        {/* <input id="name" name='name' onChange={formik.handleChange}
-          className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.name ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
-          type="text"
-          placeholder="Enter your name"
-          /> */}
-        {/*  */}
-          <input id="email" name='email' onChange={formik.handleChange}
-          className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.email ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
-          type="email"
-          placeholder="Enter your email id"
-          />
-          {/* {formik.errors.userPassword && <div className="text-red-500 ">{formik.errors.userPassword}</div>} */}
-
-     
-          <div className="relative">
-            <input
-              id="password"
-              name="password"
-              onChange={formik.handleChange}
-              className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.password ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 pr-12`}
-              type={showPassword ? "text" : "password"} // Toggle between text and password type
-              value={formik.values.password} // Ensure value is controlled
-              placeholder="Enter your password"
+          {/* <input id="name" name='name' onChange={formik.handleChange}
+            className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.name ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+            type="text"
+            placeholder="Enter your name"
+            /> */}
+          {/*  */}
+            <input id="email" name='email' onChange={formik.handleChange}
+            className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.email ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+            type="email"
+            placeholder="Enter your email id"
             />
-            {
-              showPassword ? (<>
+            {/* {formik.errors.userPassword && <div className="text-red-500 ">{formik.errors.userPassword}</div>} */}
 
-              <svg xmlns="http://www.w3.org/2000/svg"  onClick={() => setShowPassword(!showPassword)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 absolute m-2 right-3 top-1/2 transform -translate-y-1/2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              </svg>
-                    
-              </>) : (
-              <>
-                  <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5 absolute m-2 right-3 top-1/2 transform -translate-y-1/2"
-                  onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
-                  />
+      
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                onChange={formik.handleChange}
+                className={`w-full px-6 py-4 rounded-xl font-medium bg-gray-100 border ${formik.errors.password ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 pr-12`}
+                type={showPassword ? "text" : "password"} // Toggle between text and password type
+                value={formik.values.password} // Ensure value is controlled
+                placeholder="Enter your password"
+              />
+              {
+                showPassword ? (<>
+
+                <svg xmlns="http://www.w3.org/2000/svg"  onClick={() => setShowPassword(!showPassword)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 absolute m-2 right-3 top-1/2 transform -translate-y-1/2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 </svg>
-              </>
-            )
-            }
-            
-          </div>
+                      
+                </>) : (
+                <>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5 absolute m-2 right-3 top-1/2 transform -translate-y-1/2"
+                    onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
+                    />
+                  </svg>
+                </>
+              )
+              }
+              
+            </div>
 
 
-          {/* {formik.errors.password && <div className="text-red-500 ">{formik.errors.password}</div>} */}
+            {/* {formik.errors.password && <div className="text-red-500 ">{formik.errors.password}</div>} */}
 
-          {/* Submit button */}
-          <button
-              type='submit'
-              className="mt-5 tracking-wide font-semibold bg-orange-500 text-gray-100 w-full py-4 rounded-xl hover:bg-orange-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-              disabled={formik.isSubmitting} // Disable the button while submitting
-          >
-              {formik.isSubmitting ? (
-                  // Show loading spinner if submitting
-                  <span>Loading...</span>
-              ) : (
-                  // Show "Signin" text if not submitting
-                  <span className=' uppercase'>Sign in</span>
-              )}
-          </button>
-        </form>
-         <div className="my-6 border-b text-center">
+            {/* Submit button */}
+            <button
+                type='submit'
+                className="mt-5 tracking-wide font-semibold bg-orange-500 text-gray-100 w-full py-4 rounded-xl hover:bg-orange-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                disabled={formik.isSubmitting} // Disable the button while submitting
+            >
+                {formik.isSubmitting ? (
+                    // Show loading spinner if submitting
+                    <span>Loading...</span>
+                ) : (
+                    // Show "Signin" text if not submitting
+                    <span className=' uppercase'>Sign in</span>
+                )}
+            </button>
+          </form>
+          <div className="my-6 border-b text-center">
               <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                 sign in with
               </div>

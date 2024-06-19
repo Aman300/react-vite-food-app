@@ -112,56 +112,48 @@ async function fetchUserList(){
       <div className='bg-black h-48 rounded-3xl ml-4 mr-4'>
         <img className='object-cover h-48 w-full rounded-3xl' src="https://cdn.pixabay.com/photo/2024/05/06/16/58/burger-8743791_1280.jpg" alt="" />
       </div>
-      <div className="flex animate__animated animate__fadeInUp animate__faster  xl:w-1/3 w-full outline-none focus:outline-none mb-6">
+      <div className="flex animate__animated animate__fadeInUp animate__faster w-full outline-none focus:outline-none mb-6">
         <div className="w-full">
-          <div className="rounded-t-[30px] shadow-xl relative flex flex-col w-full bg-white outline-none focus:outline-none xl:p-6 p-5 h-screen">
+          <div className="rounded-t-[30px] shadow-xl relative flex flex-col w-full bg-white outline-none focus:outline-none  p-5 h-screen">
             
             <div className='flex justify-start items-center mb-4'>
               <h1 className=' text-xl font-semibold'>Categories</h1>
             </div>
 
-          <div className='overflow-x-auto mb-4'>
-            <div className='flex gap-2'> 
-              <div class='flex justify-between gap-2 items-center p-1.5 bg-orange-500 rounded-full shadow-xl'>
-                <div class='bg-white rounded-full h-10 w-10'>
-                  <img class='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/475195/hamburger.svg" alt="Hamburger Icon" />
+            <div className='overflow-x-auto mb-4 xl:mb-0'>
+              <div className='flex items-center gap-2'> 
+                <div class='flex justify-between gap-2 items-center p-1.5 bg-orange-500 rounded-full shadow-xl cursor-pointer'>
+                  <div class='bg-white rounded-full h-10 w-10'>
+                    <img class='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/475195/hamburger.svg" alt="Hamburger Icon" />
+                  </div>
+                  <p class='text-white font-semibold'>Hamburger</p>
                 </div>
-                <p class='text-white font-semibold'>Hamburger</p>
-              </div>
 
-              <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
-                <div className='bg-white rounded-full h-10 w-10'>
-                  <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/475216/pizza.svg" alt="" />
+                <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full cursor-pointer'>
+                  <div className='bg-white rounded-full h-10 w-10'>
+                    <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/475216/pizza.svg" alt="" />
+                  </div>
+                  <div>
+                    <p className='text-black font-semibold'>Pizza</p>
+                  </div>
                 </div>
-                <div>
-                  <p className='text-black font-semibold'>Pizza</p>
+                <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full cursor-pointer'>
+                  <div className='bg-white rounded-full h-10 w-10'>
+                    <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
+                  </div>
+                  <div>
+                    <p className='text-black font-semibold'>Meat</p>
+                  </div>
                 </div>
+                <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full cursor-pointer'>
+                  <div className='bg-white rounded-full h-10 w-10'>
+                    <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
+                  </div>
+                  <div>
+                    <p className='text-black font-semibold'>Meat</p>
+                  </div>
+                </div>                
               </div>
-              <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
-                <div className='bg-white rounded-full h-10 w-10'>
-                  <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
-                </div>
-                <div>
-                  <p className='text-black font-semibold'>Meat</p>
-                </div>
-              </div>
-              <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
-                <div className='bg-white rounded-full h-10 w-10'>
-                  <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
-                </div>
-                <div>
-                  <p className='text-black font-semibold'>Meat</p>
-                </div>
-              </div>
-              <div className='flex justify-between gap-2 items-center p-1.5 bg-[#f5f7f9] rounded-full'>
-                <div className='bg-white rounded-full h-10 w-10'>
-                  <img className='h-10 w-10 p-1.5' src="https://www.svgrepo.com/show/406568/meat-on-bone.svg" alt="" />
-                </div>
-                <div>
-                  <p className='text-black font-semibold'>Meat</p>
-                </div>
-              </div>
-            </div>
             </div>
 
             <div className='flex justify-start items-center mb-3'>
