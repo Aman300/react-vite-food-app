@@ -12,6 +12,7 @@ import PrivateRoutes from './utils/PrivateRoutes';
 import Chat from './views/home/Chat';
 import Signin from './views/auth/Signin';
 import Signup from './views/auth/Signup';
+import BottomNav from './components/BottomNav';
 
 export default function App() {
   return (
