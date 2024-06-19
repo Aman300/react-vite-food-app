@@ -3,7 +3,7 @@ import React from 'react'
 function BottomNav() {
   return (
     <>
-    <div className='w-full py-4 bg-orange-500 rounded-t-[30px] text-white fixed bottom-0'>
+    <div className='w-full py-4 bg-orange-500 rounded-t-[25px] text-white fixed bottom-0'>
         <div className='flex justify-between items-center px-6'>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
